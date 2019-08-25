@@ -10,12 +10,12 @@ export default function createRoutes() {
         {
             path: "/",
             component: HomePage,
-            redirect: "/discover/recommend",
+            // redirect: "/discover/recommend",
             children: [
                 {
                     path: "/discover",
-                    component: DiscoverMusic,
                     redirect: "/discover/recommend",
+                    component: DiscoverMusic,
                     children: [
                         {
                             title: "个性推荐",

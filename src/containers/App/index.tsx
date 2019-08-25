@@ -3,7 +3,7 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import createRoutes from "@routers/index";
 
-window.myHistory = createBrowserHistory();
+const myHistory = createBrowserHistory();
 
 const App = () => {
 
@@ -32,7 +32,7 @@ const App = () => {
     const routes = createRoute(createRoutes());
 
     return (
-        <Router history={window.myHistory}>
+        <Router history={myHistory}>
             <Switch>
                 {routes}
             </Switch>

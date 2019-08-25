@@ -10,6 +10,7 @@
         "moduleResolution": "node",
         "rootDir": "src",
         "noImplicitReturns": true,
+        "experimentalDecorators": true,
         "noImplicitThis": true,
         "noImplicitAny": true,
         "strictNullChecks": true,
@@ -20,7 +21,8 @@
             "@src/*": ["src/*"],
             "@utils/*": ["src/utils/*"],
             "@images/*": ["src/images/*"],
-            "@routers/*": ["src/routers/*"]
+            "@routers/*": ["src/routers/*"],
+            "@mock/*": ["src/mock/*"]
         }
     },
     "exclude": [

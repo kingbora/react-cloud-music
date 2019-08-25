@@ -13,7 +13,8 @@ const vendors = [
 const libs = [
     'redux',
     'react-redux',
-    'redux-thunk'
+    'redux-thunk',
+    'redux-actions'
 ];
 
 module.exports = {

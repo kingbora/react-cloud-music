@@ -18,7 +18,7 @@ const Header = (props: HeaderProps) => {
         return () => {
             ipcRender && ipcRender.removeAllListeners("isAppMax");
         };
-    });
+    }, []);
 
     const onMinimize = () => {
         ipcRender && ipcRender.send("minimizeApp");

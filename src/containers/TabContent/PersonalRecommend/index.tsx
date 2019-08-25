@@ -1,19 +1,50 @@
 import * as React from "react";
 import style from "./style.scss";
-const cover1 = require("@images/tmp/cover1.jpg");
-const cover2 = require("@images/tmp/cover2.jpg");
-const cover3 = require("@images/tmp/cover3.jpg");
+import axios from "@src/utils/httpInterceptors";
+import { updateRecommendPlaylist } from "./actions";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+const { useEffect } = React;
 const headset = require("@images/icon_headset.svg");
 const play = require("@images/icon_pause.svg");
 
-const PersonalRecommend = () => {
+interface PersonalRecommendProps { }
+
+interface PersonalRecommendStateProps {
+    playList?: Array<any>;
+}
+
+interface PersonalRecommendDispatchProps {
+    updateRecommendPlaylist?: Function;
+}
+
+
+const PersonalRecommend = (props: PersonalRecommendProps & PersonalRecommendStateProps & PersonalRecommendDispatchProps) => {
+    useEffect(() => {
+        const fetchData = async () => {
+            if (props.updateRecommendPlaylist) {
+                const result = await axios("/personalized");
+                if (result.status === 200) {
+                    props.updateRecommendPlaylist(result.data);
+                } else {
+                    const localData = await axios(require("@mock/playlist.json"));
+                    if (localData.status === 200) {
+                        props.updateRecommendPlaylist(localData.data);
+                    }
+                }
+            }
+        };
+
+        props.playList && props.playList.length === 0 && fetchData();
+    }, [props.playList && props.playList.length]);
+
     return (
         <div className={style.ncPersonalRecommend}>
             <div className={style.slider}></div>
             <div className={style.panel}>
                 <div className={style.title}>
                     <h3>推荐歌单</h3>
-                    <a href="#">更多&gt;</a>
+                    <Link to="/discover/playList">更多&gt;</Link>
                 </div>
                 <div className={style.recommend}>
                     <div className={style.gridBlock}>
@@ -28,101 +59,46 @@ const PersonalRecommend = () => {
                         </div>
                         <p>每日歌曲推荐</p>
                     </div>
-                    <div className={style.gridBlock}>
-                        <div className={style.thumbnail}>
-                            <div className={style.hoverTips}>
-                                <span>编辑推荐：每周VIP专享歌曲，编辑精选推荐</span>
+                    {
+                        props.playList && props.playList.map((playlist: any) => (
+                            <div key={playlist.id} className={style.gridBlock}>
+                                <div className={style.thumbnail}>
+                                    <div className={style.hoverTips}>
+                                        <span>{playlist.copywriter}</span>
+                                    </div>
+                                    <div className={style.coverClicks}>
+                                        <img src={headset} />
+                                        <span>{playlist.playCount}</span>
+                                    </div>
+                                    <img src={playlist.picUrl} />
+                                    <div className={style.playFlag}>
+                                        <img src={play} />
+                                    </div>
+                                </div>
+                                <p>{playlist.name}</p>
                             </div>
-                            <div className={style.coverClicks}>
-                                <img src={headset} />
-                                <span>16635万</span>
-                            </div>
-                            <img src={cover1} />
-                            <div className={style.playFlag}>
-                                <img src={play} />
-                            </div>
-                        </div>
-                        <p>[VIP专享]一周新歌推荐</p>
-                    </div>
-                    <div className={style.gridBlock}>
-                        <div className={style.thumbnail}>
-                            <div className={style.hoverTips}>
-                                <span>编辑推荐：我再也不想被大量了，我想你也是一样吧！</span>
-                            </div>
-                            <div className={style.coverClicks}>
-                                <img src={headset} />
-                                <span>24562</span>
-                            </div>
-                            <img src={cover2} />
-                            <div className={style.playFlag}>
-                                <img src={play} />
-                            </div>
-                        </div>
-                        <p>拒绝被打量，你独特的完美有世界包容</p>
-                    </div>
-                    <div className={style.gridBlock}>
-                        <div className={style.thumbnail}>
-                            <div className={style.hoverTips}>
-                                <span>根据你喜欢的单曲《等你下课(with杨瑞代)合唱》而生成的歌单</span>
-                            </div>
-                            <div className={style.coverClicks}>
-                                <img src={headset} />
-                                <span>2357万</span>
-                            </div>
-                            <img src={cover3} />
-                            <div className={style.playFlag}>
-                                <img src={play} />
-                            </div>
-                        </div>
-                        <p>神仙翻唱 | 超好听的翻唱cover集鸭</p>
-                    </div>
-                    <div className={style.gridBlock}>
-                        <div className={style.thumbnail}>
-                        <div className={style.playFlag}>
-                                <img src={play} />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className={style.gridBlock}>
-                        <div className={style.thumbnail}>
-                        <div className={style.playFlag}>
-                                <img src={play} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.gridBlock}>
-                        <div className={style.thumbnail}>
-                        <div className={style.playFlag}>
-                                <img src={play} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.gridBlock}>
-                        <div className={style.thumbnail}>
-                        <div className={style.playFlag}>
-                                <img src={play} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.gridBlock}>
-                        <div className={style.thumbnail}>
-                        <div className={style.playFlag}>
-                                <img src={play} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.gridBlock}>
-                        <div className={style.thumbnail}>
-                        <div className={style.playFlag}>
-                                <img src={play} />
-                            </div>
-                        </div>
-                    </div>
+                        ))
+                    }
+                </div>
+            </div>
+            <div className={style.panel}>
+                <div className={style.title}>
+                    <h3>独家放送</h3>
+                    <Link to="#">更多&gt;</Link>
                 </div>
             </div>
         </div>
     )
 };
 
-export default PersonalRecommend;
+const mapStateToProps = (state: any) => ({
+    playList: state.recommendReducer.playList
+});
+
+const mapDispatchToProps = (dispatch: any) => ({
+    updateRecommendPlaylist: (data: any) => {
+        dispatch(updateRecommendPlaylist(data));
+    }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(React.memo(PersonalRecommend));

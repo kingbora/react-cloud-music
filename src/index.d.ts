@@ -10,5 +10,4 @@ declare module "*.json" {
 interface Window {
     isElectron: boolean;
     require: any;
-    myHistory: any;
 }

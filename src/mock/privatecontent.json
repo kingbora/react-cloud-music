@@ -1,0 +1,45 @@
+{
+    "code": 200,
+    "name": "独家放送",
+    "result": [
+        {
+            "id": 0,
+            "url": "640_360",
+            "picUrl": "https://p2.music.126.net/iZzddLaidUj7yANhG-Fw_w==/109951164307923175.jpg",
+            "sPicUrl": "https://p2.music.126.net/XwBMZTwafMDpIu8pu8Hgeg==/109951164307919868.jpg",
+            "type": 62,
+            "copywriter": "【Vocal Jazz | 人声爵士】传奇名作Top10精选",
+            "name": "【Vocal Jazz | 人声爵士】传奇名作Top10精选",
+            "width": 640,
+            "videoId": "6F4D5FA31D7603DDB301BF3AB908E696",
+            "alg": "featured",
+            "height": 360
+        },
+        {
+            "id": 0,
+            "url": "640_360",
+            "picUrl": "https://p1.music.126.net/ItKRFq8_KFPFCA0ZR3235g==/109951164307920171.jpg",
+            "sPicUrl": "https://p1.music.126.net/bVzuH40oHEfo0arKnqe1Wg==/109951164307926527.jpg",
+            "type": 62,
+            "copywriter": "《亲爱的热爱的》电视剧插曲《给未来》，今夏最上头！",
+            "name": "《亲爱的热爱的》电视剧插曲《给未来》，今夏最上头！",
+            "width": 640,
+            "videoId": "351FD97F9B701F7AA350E5DCF8A9BD08",
+            "alg": "featured",
+            "height": 360
+        },
+        {
+            "id": 0,
+            "url": "640_360",
+            "picUrl": "https://p1.music.126.net/H7xzKp1h8a0gYT5b5JU6YQ==/109951164307842611.jpg",
+            "sPicUrl": "https://p1.music.126.net/HBTXsxJ7W5D_qQLYgFFtvQ==/109951164307839723.jpg",
+            "type": 62,
+            "copywriter": "萌德卡妹热单《Señorita》洗脑神曲",
+            "name": "萌德卡妹热单《Señorita》洗脑神曲",
+            "width": 640,
+            "videoId": "16B47159E1B27151FD2BA279C8653C14",
+            "alg": "featured",
+            "height": 360
+        }
+    ]
+}

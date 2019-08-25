@@ -1,0 +1,90 @@
+{
+    "code": 200,
+    "category": 3,
+    "result": [
+        {
+            "id": 10886197,
+            "type": 5,
+            "name": "Can You Feel the Love Tonight?",
+            "copywriter": "编辑推荐：纯人声乐团Pentatonix翻唱《狮子王》原声MV发布！",
+            "picUrl": "https://p2.music.126.net/H7586b04i42SrK5Nl7sdqg==/109951164316990687.jpg",
+            "canDislike": false,
+            "duration": 272000,
+            "playCount": 14918,
+            "subed": false,
+            "artists": [
+                {
+                    "id": 99292,
+                    "name": "Pentatonix"
+                }
+            ],
+            "artistName": "Pentatonix",
+            "artistId": 99292,
+            "alg": "featured"
+        },
+        {
+            "id": 10885225,
+            "type": 5,
+            "name": "CUIDAO POR AHÍ",
+            "copywriter": "编辑推荐：哥伦比亚歌手J Balvin携手Bad Bunny新单MV发布！",
+            "picUrl": "https://p2.music.126.net/1G-VWP_z2bdru-hLeJ_jmw==/109951164316656457.jpg",
+            "canDislike": false,
+            "duration": 203000,
+            "playCount": 6004,
+            "subed": false,
+            "artists": [
+                {
+                    "id": 309127,
+                    "name": "J. Balvin"
+                },
+                {
+                    "id": 12333183,
+                    "name": "Bad Bunny"
+                }
+            ],
+            "artistName": "J. Balvin",
+            "artistId": 309127,
+            "alg": "featured"
+        },
+        {
+            "id": 10886206,
+            "type": 5,
+            "name": "Yaxlik2",
+            "copywriter": "最新热门MV推荐",
+            "picUrl": "https://p2.music.126.net/g-bhZFnoQKtDGhT8afRA3w==/109951164317518680.jpg",
+            "canDislike": true,
+            "duration": 308000,
+            "playCount": 4716,
+            "subed": false,
+            "artists": [
+                {
+                    "id": 13611746,
+                    "name": "Mahmutjan-Mamat"
+                }
+            ],
+            "artistName": "Mahmutjan-Mamat",
+            "artistId": 13611746,
+            "alg": "hot_server"
+        },
+        {
+            "id": 10885316,
+            "type": 5,
+            "name": "我们（Cover：王山而）-诗梦乐/诗雅",
+            "copywriter": "最新热门MV推荐",
+            "picUrl": "https://p2.music.126.net/GgwipplbRnzWmUzvyI6xmg==/109951164318100030.jpg",
+            "canDislike": true,
+            "duration": 219000,
+            "playCount": 734,
+            "subed": false,
+            "artists": [
+                {
+                    "id": 32796671,
+                    "name": "诗梦乐"
+                }
+            ],
+            "artistName": "诗梦乐",
+            "artistId": 32796671,
+            "alg": "hot_server"
+        }
+    ]
+}

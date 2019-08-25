@@ -6,7 +6,7 @@ interface asyncComponentState {
     component: any;
 }
 
-function asyncComponent(importComponent: any) {
+export function asyncComponent(importComponent: any) {
     class AsyncComponent extends React.Component<any, asyncComponentState> {
         constructor(props: any) {
             super(props);

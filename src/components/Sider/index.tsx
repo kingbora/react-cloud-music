@@ -1,9 +1,9 @@
 import * as React from "react";
 import classNames from "classnames";
 import style from "./style.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter, RouteComponentProps } from "react-router-dom";
 
-interface SiderProps {
+interface SiderProps extends RouteComponentProps {
     className?: string;
 }
 
@@ -16,41 +16,43 @@ const Sider = (props: SiderProps) => {
 
     const linkTo = (e: any) => {
         e.preventDefault();
-        if (e.currentTarget.pathname !== window.location.pathname) {
-            window.myHistory.push(e.currentTarget.pathname);
+        if (e.currentTarget.pathname !== props.location.pathname) {
+            props.history.push(e.currentTarget.pathname);
         }
     };
+
+    const isActive = (path: any, match: any, location: any) => !!(match || location.pathname.indexOf(path) > -1);
 
     return (
         <div data-border="right" className={classes}>
             <div className={style.list}>
                 <h3>推荐</h3>
                 <ul>
-                    <NavLink onClick={linkTo} exact={true} activeStyle={disabledStyle} activeClassName={style.active} to="/discover/recommend">
+                    <NavLink isActive={(match: any, location: any) => isActive("/discover", match, location)} onClick={linkTo} activeStyle={disabledStyle} activeClassName={style.active} to="/discover/recommend">
                         <li>
                             <i className={style.foundMusic}></i>
                             <span>发现音乐</span>
                         </li>
                     </NavLink>
-                    <NavLink onClick={linkTo} activeStyle={disabledStyle} activeClassName={style.active} to="/personalFm">
+                    <NavLink isActive={(match: any, location: any) => isActive("/personalFm", match, location)} onClick={linkTo} activeStyle={disabledStyle} activeClassName={style.active} to="/personalFm">
                         <li>
                             <i className={style.personalFm}></i>
                             <span>私人FM</span>
                         </li>
                     </NavLink>
-                    <NavLink onClick={linkTo} activeStyle={disabledStyle} activeClassName={style.active} to="/liveShow">
+                    <NavLink isActive={(match: any, location: any) => isActive("/liveShow", match, location)} onClick={linkTo} activeStyle={disabledStyle} activeClassName={style.active} to="/liveShow">
                         <li>
                             <i className={style.liveShow}></i>
                             <span>LOOK直播</span>
                         </li>
                     </NavLink>
-                    <NavLink onClick={linkTo} activeStyle={disabledStyle} activeClassName={style.active} to="/video">
+                    <NavLink isActive={(match: any, location: any) => isActive("/video", match, location)} onClick={linkTo} activeStyle={disabledStyle} activeClassName={style.active} to="/video">
                         <li>
                             <i className={style.video}></i>
                             <span>视频</span>
                         </li>
                     </NavLink>
-                    <NavLink onClick={linkTo} activeStyle={disabledStyle} activeClassName={style.active} to="/friends">
+                    <NavLink isActive={(match: any, location: any) => isActive("/friends", match, location)} onClick={linkTo} activeStyle={disabledStyle} activeClassName={style.active} to="/friends">
                         <li>
                             <i className={style.friend}></i>
                             <span>朋友</span>
@@ -61,14 +63,14 @@ const Sider = (props: SiderProps) => {
             <div className={style.list}>
                 <h3>我的音乐</h3>
                 <ul>
-                    <NavLink onClick={linkTo} activeStyle={disabledStyle} activeClassName={style.active} to="/local">
+                    <NavLink isActive={(match: any, location: any) => isActive("/local", match, location)} onClick={linkTo} activeStyle={disabledStyle} activeClassName={style.active} to="/local">
                         <li>
                             <i className={style.localMusic}></i>
                             <span>本地音乐</span>
                         </li>
                     </NavLink>
 
-                    <NavLink onClick={linkTo} activeStyle={disabledStyle} activeClassName={style.active} to="/download">
+                    <NavLink isActive={(match: any, location: any) => isActive("/download", match, location)} onClick={linkTo} activeStyle={disabledStyle} activeClassName={style.active} to="/download">
                         <li>
                             <i className={style.downloadManager}></i>
                             <span>下载管理</span>
@@ -89,4 +91,4 @@ const Sider = (props: SiderProps) => {
     )
 };
 
-export default React.memo(Sider);
+export default React.memo(withRouter(Sider));

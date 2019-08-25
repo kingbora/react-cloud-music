@@ -48,6 +48,7 @@ module.exports = {
             "@utils": resolve("src/utils"),
             "@images": resolve("src/images"),
             "@routers": resolve("src/routers"),
+            "@mock": resolve("src/mock"),
             "@src": resolve("src")
         }
     },
