@@ -1,0 +1,18 @@
+.ncHomePage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    .wrapper {
+        flex: 1;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+    }
+    .centerContent {
+        background-color: #fafafa;
+        flex: 1;
+        overflow: auto;
+    }
+}

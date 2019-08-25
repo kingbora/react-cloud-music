@@ -1,0 +1,145 @@
+.ncFooter {
+    height: 50px;
+    padding: 0 20px;
+    background-color: #f6f6f8;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 120px;
+        justify-content: space-between;
+        button {
+            background-color: $primary-red;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .prevSong,
+    .nextSong {
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+    }
+
+    .middleControl {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+    }
+
+    .playSong {
+        background-image: url("../../images/icon_pause.svg");
+        background-size: 18px;
+    }
+
+    .prevSong {
+        background-image: url("../../images/icon_prev.svg");
+        background-size: 14px;
+    }
+
+    .nextSong {
+        background-image: url("../../images/icon_next.svg");
+        background-size: 16px;
+    }
+
+    .progress {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 20px;
+        .progressTime {
+            font-size: 12px;
+        }
+        .progressBar {
+            flex: 1;
+            height: 4px;
+            border-radius: 2px;
+            background-color: #C2C2C4;
+            position: relative;
+            margin: 0 15px;
+            .progressSlider {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 10%;
+                height: 100%;
+                border-radius: 2px;
+                background-color: $primary-red;
+                button {
+                    width: 14px;
+                    height: 14px;
+                    padding: 0;
+                    border-radius: 7px;
+                    background-color: #fff;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translate(50%,-50%);
+                    border: 0.5px solid #e1e1e2;
+                    &::after {
+                        content: "";
+                        width: 4px;
+                        height: 4px;
+                        border-radius: 2px;
+                        display: block;
+                        margin: auto;
+                        background-color: $primary-red;
+                    }
+                }
+            }
+        }
+    }
+    .volumn {
+        width: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        i {
+            width: 20px;
+            height: 15px;
+            background-image: url("../../images/icon_volumn.svg");
+            background-position: center center;
+            background-size: 15px;
+            background-repeat: no-repeat;
+        }
+        .volumnProgress {
+            height: 4px;
+            background-color: #E6E6E8;
+            border-radius: 2px;
+            position: relative;
+            flex: 1;
+            .volumnProgressBar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20%;
+                background-color: $primary-red;
+                height: 100%;
+                border-radius: 2px;
+            }
+        }
+    }
+    .toggleLyric {
+        width: 18px;
+        height: 18px;
+        font-size: 13px;
+        line-height: 18px;
+        text-align: center;
+        font-family: "微软雅黑";
+        background-color: transparent;
+        border: 0.5px solid #666;
+        color: #444;
+        font-weight: 500;
+        padding: 0;
+        margin-left: 15px;
+
+    }
+}

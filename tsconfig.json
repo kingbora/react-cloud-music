@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "outDir": "www",
+        "module": "commonjs",
+        "target": "es5",
+        "lib": ["es6", "dom"],
+        "sourceMap": true,
+        "allowJs": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "rootDir": "src",
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "baseUrl": "./",
+        "paths": {
+            "@containers/*": ["src/containers/*"],
+            "@components/*": ["src/components/*"],
+            "@src/*": ["src/*"],
+            "@utils/*": ["src/utils/*"],
+            "@images/*": ["src/images/*"],
+            "@routers/*": ["src/routers/*"]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "build",
+        "www",
+        "webpack.config.js",
+        "webpack.config.dll.js",
+        "bootstrap.js",
+        "dll/*"
+    ],
+    "types": [
+        "typePatches"
+    ]
+}

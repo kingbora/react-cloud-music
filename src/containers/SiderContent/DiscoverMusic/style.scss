@@ -1,0 +1,44 @@
+.ncDiscoverMusic {
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px;
+    .tabList {
+        border-bottom: 0.5px solid #ddd;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .tabNav {
+            display: inline-block;
+            width: 60px;
+            margin: 0 10px;
+            height: 42px;
+            line-height: 42px;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .active {
+            cursor: default;
+            pointer-events: none;
+            color: $primary-red;
+            border-color:$primary-red;
+        }
+    }
+
+    .tabContentWrap {
+        flex: 1;
+
+        .tabContent {
+            display: none;
+        }
+
+        .current {
+            display: block;
+        }
+    }
+}

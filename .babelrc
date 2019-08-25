@@ -1,0 +1,24 @@
+{
+    "presets": [
+        ["@babel/preset-env", {
+            "targets": {
+                "browsers": ["last 2 versions", "> 0.2%", "maintained node versions", "not dead"]
+            }
+        }, ],
+        ["@babel/preset-react"],
+        ["@babel/preset-typescript"]
+    ],
+    "plugins": [
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "absoluteRuntime": false,
+                "corejs": false,
+                "helpers": false,
+                "regenerator": true,
+                "useESModules": true
+            }
+        ],
+        ["@babel/plugin-proposal-class-properties", { "loose": false }]
+    ]
+}

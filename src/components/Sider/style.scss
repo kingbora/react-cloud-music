@@ -1,0 +1,92 @@
+.ncSider {
+    width: 200px;
+    height: 100%;
+    background-color: #f5f5f7;
+
+    .list {
+        h3 {
+            height: 36px;
+            line-height: 36px;
+            font-size: 13px;
+            color: #7D7D7D;
+            padding-left: 10px;
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            &:active,&:link,&:focus {
+                text-decoration: none;
+                color: #5C5C5C;
+            }
+        }
+
+
+        li {
+            font-size: 12px;
+            color: #5C5C5C;
+            height: 30px;
+            line-height: 30px;
+            border-left: 3px solid transparent;
+            background-color: transparent;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            i {
+                width: 20px;
+                height: 20px;
+                margin: 0 8px 0 12px;
+                display: inline-block;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            &:hover {
+                color: #000;
+            }
+        }
+
+        a.active > li {
+            border-color: $primary-red-active;
+            color: #000;
+            background-color: #E6E7EA;
+        }
+    }
+
+    .foundMusic {
+        background-image: url("../../images/icon_music.svg");
+        background-size: 20px;
+        
+    }
+    .personalFm {
+        background-image: url("../../images/icon_personal_fm.svg");
+        background-size: 18px;
+    }
+    .liveShow {
+        background-image: url("../../images/icon_live_show.svg");
+        background-size: 18px;
+    }
+    .video {
+        background-image: url("../../images/icon_video.svg");
+        background-size: 18px;
+    }
+    .friend {
+        background-image: url("../../images/icon_friends.svg");
+        background-size: 18px;
+    }
+    .localMusic {
+        background-image: url("../../images/icon_local_music.svg");
+        background-size: 18px;
+    }
+    .downloadManager {
+        background-image: url("../../images/icon_local_download.svg");
+        background-size: 16px;
+    }
+    .favorite {
+        background-image: url("../../images/icon_favorite.svg");
+        background-size: 18px;
+    }
+}

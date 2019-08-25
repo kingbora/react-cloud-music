@@ -1,0 +1,159 @@
+.ncPersonalRecommend {
+    .slider {
+        height: 150px;
+    }
+
+    .panel {
+        .title {
+            border-bottom: 0.5px solid #ddd;
+            margin-bottom: 10px;
+            padding: 5px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            h3 {
+                font-size: 18px;
+                font-weight: normal;
+            }
+
+            a {
+                font-size: 12px;
+                color: #666;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .recommend {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .gridBlock {
+            width: 18%;
+            margin-bottom: 20px;
+            cursor: pointer;
+
+            .thumbnail {
+                width: 100%;
+                height: 0;
+                padding-bottom: 100%;
+                background-color: #fff;
+                position: relative;
+                border: 0.5px solid #d3d3d3;
+                overflow: hidden;
+
+                >img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .hoverTips {
+                    position: absolute;
+                    top: -100%;
+                    left: 0;
+                    font-size: 12px;
+                    color: #fff;
+                    line-height: 1.5;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    z-index: 10;
+                    padding: 5px;
+                    transition: top 0.5s ease-in;
+
+                    span {
+                        display: -webkit-box;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                    }
+                }
+                .coverClicks {
+                    position: absolute;
+                    z-index: 9;
+                    right: 0;
+                    padding: 5px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background: linear-gradient(to right, transparent, rgba(0,0,0,0.3));
+                    font-size: 11px;
+                    color: #fff;
+                    opacity: 1;
+                    transition: opacity 0.1s ease-in;
+                    transition-delay: 0.3s; 
+                    img {
+                        width: 12px;
+                        height: 12px;
+                        margin-right: 2px;
+                    }
+                }
+                .playFlag {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    width: 20px;
+                    height: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    border: 0.5px solid #d3d3d3;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    img {
+                        width: 60%;
+                        margin-left: 2px;
+                    }
+                }
+
+                &:hover {
+                    .hoverTips {
+                        top: 0;
+                    }
+                    .coverClicks {
+                        opacity: 0;
+                    }
+                    .playFlag {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            p {
+                font-size: 14px;
+                color: #333;
+                margin-top: 0.5em;
+            }
+        }
+
+        .dailyRecommend {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            span {
+                font-size: 13px;
+                color: #666;
+                display: inline-block;
+                margin-top: 10px;
+            }
+
+            h1 {
+                font-size: 82px;
+                font-weight: 500;
+                color: $primary-red-active;
+                margin: 0;
+            }
+        }
+    }
+}
