@@ -181,6 +181,7 @@ const PersonalRecommend = (props: PersonalRecommendProps & PersonalRecommendStat
                             ))
                         }
                     </div>
+                    <div className={style.diliver}></div>
                     <div className={style.rightSide}>
                         {
                             props.lastestMusic && props.lastestMusic.slice(5, 10).map((item, index) => (
