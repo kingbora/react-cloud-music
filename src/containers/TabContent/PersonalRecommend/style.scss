@@ -50,6 +50,7 @@
                     position: absolute;
                     width: 100%;
                     height: 100%;
+                    border: none;
                 }
 
                 .hoverTips {
@@ -107,10 +108,11 @@
                     justify-content: center;
                     align-items: center;
                     border-radius: 50%;
-                    border: 0.5px solid #d3d3d3;
+                    border: 0.5px solid #fff;
                     background-color: rgba(0, 0, 0, 0.4);
                     opacity: 0;
                     transition: opacity 0.3s ease;
+                    z-index: 9;
 
                     img {
                         width: 60%;
@@ -145,6 +147,14 @@
             }
         }
 
+        .gridBlock:not(:first-child) .thumbnail {
+            background-image: url("../../../images/icon_placeholder_music.svg");
+            background-color: #e1e3e4;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 30%;
+        }
+
         .dailyRecommend {
             width: 100%;
             height: 100%;
@@ -167,6 +177,424 @@
                 color: $primary-red-active;
                 margin: 0;
             }
+        }
+    }
+
+    .personalized {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        .gridBlock {
+            flex: 1;
+            margin-left: 15px;
+            cursor: pointer;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            .thumbnail {
+                width: 100%;
+                padding-bottom: 56.25%;
+                position: relative;
+                overflow: hidden;
+
+                >img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+
+                .videoFlag {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    width: 20px;
+                    height: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    border: 0.5px solid #fff;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    z-index: 9;
+
+                    img {
+                        width: 60%;
+                    }
+                }
+            }
+
+            p {
+                font-size: 14px;
+                color: #333;
+                margin-top: 0.5em;
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+
+    .lastestMusic {
+        display: flex;
+        flex-direction: row;
+        border: 0.5px solid #ddd;
+        margin-bottom: 40px;
+
+        .leftSide,
+        .rightSide {
+            flex: 1;
+        }
+
+        .rightSide {
+            border-left: 0.5px solid #ddd;
+        }
+
+        .singleLine {
+            display: flex;
+            flex-direction: row;
+            padding: 10px 0;
+
+            &:nth-child(2n) {
+                background-color: #f5f5f7;
+            }
+
+            &:hover {
+                background-color: #ebeced;
+
+                .songInfo {
+
+                    .artists,
+                    .artists a {
+                        color: #333;
+                    }
+                }
+            }
+
+            .lineNumber {
+                width: 45px;
+                height: 45px;
+                line-height: 45px;
+                text-align: center;
+                color: #777;
+                font-size: 12px;
+            }
+
+            .cover {
+                width: 45px;
+                height: 45px;
+                position: relative;
+                cursor: pointer;
+
+                >img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .playFlag {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    border: 0.5px solid #fff;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    z-index: 9;
+
+                    img {
+                        width: 60%;
+                        margin-left: 2px;
+                    }
+                }
+            }
+
+            .songInfo {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: flex-start;
+                padding: 0 10px;
+
+                .songName {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 14px;
+                }
+
+                .artists,
+                .artists a {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 12px;
+                    color: #666;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .recommendMv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        .gridBlock {
+            flex: 1;
+            margin-left: 15px;
+            cursor: pointer;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            .thumbnail {
+                width: 100%;
+                height: 0;
+                padding-bottom: 56.25%;
+                background-color: #fff;
+                position: relative;
+                border: 0.5px solid #d3d3d3;
+                overflow: hidden;
+
+                >img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+
+                .hoverTips {
+                    position: absolute;
+                    width: 100%;
+                    top: -100%;
+                    left: 0;
+                    font-size: 12px;
+                    color: #fff;
+                    line-height: 1.5;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    z-index: 10;
+                    padding: 5px;
+                    box-sizing: border-box;
+                    transition: top 0.5s ease-in;
+
+                    span {
+                        display: -webkit-box;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                    }
+                }
+
+                .coverClicks {
+                    position: absolute;
+                    z-index: 9;
+                    right: 0;
+                    padding: 5px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.3));
+                    font-size: 11px;
+                    color: #fff;
+                    opacity: 1;
+                    transition: opacity 0.1s ease-in;
+                    transition-delay: 0.3s;
+
+                    img {
+                        width: 12px;
+                        height: 12px;
+                        margin-right: 2px;
+                    }
+                }
+
+                &:hover {
+                    .hoverTips {
+                        top: 0;
+                    }
+
+                    .coverClicks {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            .mvInfo {
+                padding: 5px 0;
+
+                .mvName {
+                    font-size: 13px;
+                    color: #333;
+                }
+
+                .artists {
+                    font-size: 13px;
+                    color: #999;
+
+                    a {
+                        color: #999;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .djProgram {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .gridBlock {
+            width: 18%;
+            margin-bottom: 20px;
+            cursor: pointer;
+
+            .thumbnail {
+                width: 100%;
+                height: 0;
+                padding-bottom: 100%;
+                background-color: #fff;
+                position: relative;
+                border: 0.5px solid #d3d3d3;
+                overflow: hidden;
+
+                >img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+
+                .hoverTips {
+                    position: absolute;
+                    width: 100%;
+                    top: -100%;
+                    left: 0;
+                    font-size: 12px;
+                    color: #fff;
+                    line-height: 1.5;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    z-index: 10;
+                    padding: 5px;
+                    box-sizing: border-box;
+                    transition: top 0.5s ease-in;
+
+                    span {
+                        display: -webkit-box;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                    }
+                }
+
+                .coverClicks {
+                    position: absolute;
+                    z-index: 9;
+                    right: 0;
+                    padding: 5px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.3));
+                    font-size: 11px;
+                    color: #fff;
+                    opacity: 1;
+                    transition: opacity 0.1s ease-in;
+                    transition-delay: 0.3s;
+
+                    img {
+                        width: 12px;
+                        height: 12px;
+                        margin-right: 2px;
+                    }
+                }
+
+                .playFlag {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    width: 20px;
+                    height: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    border: 0.5px solid #fff;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    z-index: 9;
+
+                    img {
+                        width: 60%;
+                        margin-left: 2px;
+                    }
+                }
+
+                &:hover {
+                    .hoverTips {
+                        top: 0;
+                    }
+
+                    .coverClicks {
+                        opacity: 0;
+                    }
+
+                    .playFlag {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            p {
+                font-size: 14px;
+                color: #333;
+                margin-top: 0.5em;
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+
+    .bottom {
+        text-align: center;
+        margin-bottom: 40px;
+        .diliver {
+            margin: 40px 0 30px 0;
+            height: 1px;
+            width: 100%;
+            background-color: #ddd;
+        }
+        p {
+            margin: 0.8em 0;
+            font-size: 13px;
+            color: #999;
+        }
+        button {
+            padding: 5px 15px;
+            border-radius: 5px;
+            border: 0.5px solid $primary-red-active;
+            color: $primary-red-active;
+            font-size: 12px;
+            background: transparent;
+            outline: none;
         }
     }
 }
